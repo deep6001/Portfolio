@@ -11,6 +11,8 @@ import AnimatedEmoji from "../components/AnimantedEmoji";
 import PageTransition from "../components/PageTransition";
 import { useAnalytics } from "@/hooks/useAnalytics";
 
+const API_BASE_URL = import.meta.env.VITE_BASE_URL;
+
 function Contact() {
     const { sessionId, getAnalyticsData } = useAnalytics();
     const [submitted, setSubmitted] = useState(false);
@@ -40,7 +42,7 @@ function Contact() {
         setError("");
 
         try {
-            const response = await fetch("http://localhost:5000/api/contact", {
+            const response = await fetch(`${API_BASE_URL}/contact`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

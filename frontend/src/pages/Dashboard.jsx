@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const Dashboard = () => {
     const [overview, setOverview] = useState(null);
